@@ -3,27 +3,27 @@ import { Users, DollarSign, ShoppingCart, TrendingUp } from "lucide-react"
 
 const stats = [
   {
-    title: "Total Revenue",
-    value: "$45,231.89",
-    description: "+20.1% from last month",
+    title: "总收入",
+    value: "¥45,231.89",
+    description: "较上月增长 20.1%",
     icon: DollarSign,
   },
   {
-    title: "Users",
+    title: "用户数",
     value: "+2,350",
-    description: "+180.1% from last month",
+    description: "较上月增长 180.1%",
     icon: Users,
   },
   {
-    title: "Sales",
+    title: "销售额",
     value: "+12,234",
-    description: "+19% from last month",
+    description: "较上月增长 19%",
     icon: ShoppingCart,
   },
   {
-    title: "Active Now",
+    title: "当前活跃",
     value: "+573",
-    description: "+201 since last hour",
+    description: "较上小时增长 201",
     icon: TrendingUp,
   },
 ]
@@ -57,18 +57,18 @@ export default function DashboardPage() {
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
         <Card className="col-span-4">
           <CardHeader>
-            <CardTitle>Overview</CardTitle>
+            <CardTitle>概览</CardTitle>
           </CardHeader>
           <CardContent className="h-[300px] flex items-center justify-center border-2 border-dashed rounded-lg m-6 mt-0">
-            <span className="text-muted-foreground italic">Chart Placeholder</span>
+            <span className="text-muted-foreground italic">图表占位符</span>
           </CardContent>
         </Card>
         <Card className="col-span-3">
           <CardHeader>
-            <CardTitle>Recent Sales</CardTitle>
+            <CardTitle>近期销售</CardTitle>
           </CardHeader>
           <CardContent className="h-[300px] flex items-center justify-center border-2 border-dashed rounded-lg m-6 mt-0">
-            <span className="text-muted-foreground italic">List Placeholder</span>
+            <span className="text-muted-foreground italic">列表占位符</span>
           </CardContent>
         </Card>
       </div>

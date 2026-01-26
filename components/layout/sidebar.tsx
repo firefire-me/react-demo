@@ -9,9 +9,9 @@ import { useSidebarStore } from '@/lib/store'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 
 const navItems = [
-  { name: 'Dashboard', href: '/', icon: LayoutDashboard },
-  { name: 'Users', href: '/users', icon: Users },
-  { name: 'Settings', href: '/settings', icon: Settings },
+  { name: '仪表盘', href: '/', icon: LayoutDashboard },
+  { name: '用户管理', href: '/users', icon: Users },
+  { name: '设置', href: '/settings', icon: Settings },
 ]
 
 export function Sidebar() {
@@ -26,7 +26,7 @@ export function Sidebar() {
       )}
     >
       <div className="flex h-16 items-center justify-between px-4 border-b">
-        {!isCollapsed && <span className="font-bold text-xl">Admin</span>}
+        {!isCollapsed && <span className="font-bold text-xl">管理后台</span>}
         <Button variant="ghost" size="icon" onClick={toggleCollapse}>
           <ChevronLeft className={cn("h-4 w-4 transition-transform", isCollapsed && "rotate-180")} />
         </Button>
@@ -56,7 +56,7 @@ export function Sidebar() {
       <div className="p-4 border-t">
         <Button variant="ghost" className={cn("w-full justify-start", isCollapsed && "justify-center px-0")}>
           <LogOut className={cn("h-5 w-5", !isCollapsed && "mr-3")} />
-          {!isCollapsed && <span>Logout</span>}
+          {!isCollapsed && <span>退出登录</span>}
         </Button>
       </div>
     </aside>
@@ -76,7 +76,7 @@ export function MobileSidebar() {
       </SheetTrigger>
       <SheetContent side="left" className="p-0 w-64">
         <div className="flex h-16 items-center px-6 border-b">
-          <span className="font-bold text-xl">Admin</span>
+          <span className="font-bold text-xl">管理后台</span>
         </div>
         <nav className="space-y-1 p-4">
           {navItems.map((item) => {
