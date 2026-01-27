@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { LayoutDashboard, Users, Settings, LogOut, ChevronLeft, Menu } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
@@ -16,7 +16,12 @@ const navItems = [
 
 export function Sidebar() {
   const pathname = usePathname()
+  const router = useRouter()
   const { isCollapsed, toggleCollapse } = useSidebarStore()
+
+  const handleLogout = () => {
+    router.push('/login')
+  }
 
   return (
     <aside
@@ -54,7 +59,11 @@ export function Sidebar() {
         })}
       </nav>
       <div className="p-4 border-t">
-        <Button variant="ghost" className={cn("w-full justify-start", isCollapsed && "justify-center px-0")}>
+        <Button 
+          variant="ghost" 
+          className={cn("w-full justify-start", isCollapsed && "justify-center px-0")}
+          onClick={handleLogout}
+        >
           <LogOut className={cn("h-5 w-5", !isCollapsed && "mr-3")} />
           {!isCollapsed && <span>退出登录</span>}
         </Button>
